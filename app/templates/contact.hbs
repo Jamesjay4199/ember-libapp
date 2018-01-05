@@ -1,0 +1,21 @@
+<div class="jumbotron">
+    <h3>Contact  Us</h3>
+    <div class="form-horizontal form-group form-group-lg row">
+        <form role="form">
+            <div class="form-group">
+                <label for="email" class="control-label">E-mail</label>
+                {{input type="email" class="form-control" value=emailAddress placeholder="Enter your e-mail address"}}   
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="message">Message</label>
+                {{textarea class="form-control" value=message}}
+            </div>
+            <div class="form-group">
+                <button disabled={{isDisabled}} {{action 'sendMessage'}} class="btn btn-primary btn-lg btn-block">Send Message</button>
+            </div>
+        </form>
+        {{#if responseMessage}}
+            <div class="alert alert-success">{{responseMessage}}</div>
+        {{/if}}
+    </div>
+</div>
